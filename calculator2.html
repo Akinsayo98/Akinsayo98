@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.css">
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/fontawesome.css">
+    <link rel="stylesheet" href="bootstrap-4.6.2-dist/css/bootstrap.css">
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    .px{
+        width: fit-content;
+        height: auto;
+    }
+    img{
+        height: 562px;
+        margin: 40px 500px;
+        margin-bottom: 20px; 
+        position: relative;
+        width: 290px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1.);
+    }
+    .nav{
+    width: 254px;
+    height: 452.5px;
+    background-image: url(homepicture.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    position: absolute;
+    left: 518px;
+    top: 85px;
+    opacity: 0;
+    }
+ 
+   #font{
+    position: absolute;
+    font-size: 50px;
+    color: rgb(157, 23, 23);
+    bottom: 100px;
+    left: 25px;
+    cursor: pointer !important;
+    filter: brightness(50%);
+    z-index: 5;
+   }
+   #font:hover{
+   filter: brightness(120%);
+   transform: scale(1.28);
+   }
+    
+    .screen{
+        width: 100%;
+        height: 20px;
+        border: none;
+        outline: none;
+        color: white;
+        text-align: right;
+        padding: 20px;
+        margin-top: 0px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        background-color: black;
+    }
+    .screen2{
+        background-color: black;
+        width: 100%;
+        height: 50px;
+        margin-top: -7px;
+        text-align: right;
+        padding: 20px;
+        font-size: 20px;
+        border: none;
+        outline: none;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+    
+    button{
+        width: 45px;
+        height: auto;
+        font-size: 25px;
+        font-weight: bolder;
+        margin-left: 12px;
+        margin-top: 13px;
+        background-color: white;
+        border-radius: 8px;
+        border: none;
+        box-shadow:  0 0 10px black,
+                     0 0 10px black;
+                     margin-bottom: 10px;
+                     cursor: pointer !important;
+    }
+    .del{
+        width: 42%;
+    }
+    .equal{
+      width: 90%;
+    }
+    .btn1{
+        display: block;
+        width: 34px;
+        height: 34px;
+        color: white;
+        background-color: transparent;
+        font-size: 15px;
+        border-radius: 100%;
+        position: absolute;
+        left: 615.3px;
+        top: 538px;
+        
+    }
+    .btn2{
+        display: none;
+        width: 34px;
+        height: 34px;
+        color: white;
+        background-color: transparent;
+        font-size: 15px;
+        border-radius: 100%;
+        position: absolute;
+        left: 615px;
+        top: 538px;
+    }
+    .box{
+        width: 254px;
+        height: 458px;
+        position: absolute;
+        transform: translate(-50% - 50%);
+        top: 85px;
+        left: 518px;
+        transition: 1s;
+        background-color: transparent;
+        display: none;
+    }
+    
+    .overlay{
+    width: 254px;
+    height: 458px;
+    opacity: 1;
+    position: absolute;
+    left: 518px;
+    top: 85px;
+    transition: 1s;
+    background-color: rgba(0, 0, 0, 0.27);
+   }
+   
+ 
+     .own{
+        width: 100%;
+        background:linear-gradient( 24.2deg, cyan 50%,   rgb(244, 13, 190) 200px );
+        height: auto;
+        animation: 1s bright linear infinite;
+        margin-bottom: -20px;
+    }
+    @keyframes bright {
+        0%{
+            filter: hue-rotate(0deg);
+        }
+        100%{
+            filter: hue-rotate(360deg);
+            transition: 5s;
+        }
+
+    }
+    .parent{
+     width: 100%;
+     height: 100vh;
+     background-color: greenyellow;
+     /* animation: 1s bright linear infinite; */
+    }
+    </style>
+</head>
+<body>
+
+  <div class="parent">
+    <div class="own">
+        <div class="px">
+            <img src="IPhone_6_Plus_Space_Gray.svg-removebg-preview.png" alt="">
+            <div class="nav">
+                <i class="fab fa-google-plus-square" id="font"></i>
+                <i class="fab fa-whatsapp" style="color: green; left: 170px;" id="font"></i>
+                <i class="fab fa-facebook" style="color: rgb(32, 87, 254); left: 100px;" id="font"></i>
+                <i class="fab fa-instagram"style="color: purple;left: 170px; bottom: 25px;" id="font"></i>
+                <i class="fab fa-twitter" style="color: rgb(32, 87, 254); left: 100px; bottom: 25px;" id="font">
+                </i>
+                <i class="fa fa-calculator cal"style="color: orangered; bottom: 29px;" id="font"></i>
+            </div>
+            <div class="overlay">
+                
+            </div>
+            <div class="box">
+             <input type="submit" value="" class="screen">
+             <input type="text" class="screen2 text-white" placeholder="0" >
+             <button onclick="btnFn(7)" style="cursor: pointer;">7</button>
+             <button onclick="btnFn(8)">8</button>
+             <button onclick="btnFn(9)">9</button>
+             <button onclick="btnFn('+')">+</button>
+             <button onclick="btnFn(4)">4</button>
+             <button onclick="btnFn(5)">5</button>
+             <button onclick="btnFn(6)">6</button>
+             <button onclick="btnFn('-')">-</button>
+             <button onclick="btnFn(1)">1</button>
+             <button onclick="btnFn(2)">2</button>
+             <button onclick="btnFn(3)">3</button>
+             <button onclick="btnFn('*')">x</button>
+             <button onclick="btnFn(0)">0</button>
+             <button onclick="btnFn('%')">%</button>
+             <button onclick="btnFn('.')">.</button>
+             <button onclick="btnFn('/')">/</button>
+         
+             <button onclick="delFn()" class="del" id="d" style="background-color: darkred; color: white;">DEL</button>
+             <button onclick="clearFn()" class="del" id="c">C</button>
+             <button onclick="equalFn()" class="equal" style="background-color: blue; color: white;">=</button>
+            </div>
+            
+            
+         
+           </div>
+           <button class="btn1">ON</button>
+           <button class="btn2">OFF</button>
+      </div>
+    
+  </div>
+
+  <script>
+
+    var btn1 = document.querySelector(".btn1");
+    var btn2 = document.querySelector(".btn2");
+    var box = document.querySelector(".box")
+    var screen = document.getElementsByClassName("screen")[0];
+    var show = document.getElementsByClassName("screen2")[0];
+    var own = document.querySelector(".own");
+    let nav = document.querySelector(".nav");
+    let img = document.querySelector("img");
+    let cal = document.querySelector(".cal");
+
+
+   btn1.addEventListener("click",function(e){
+    e.preventDefault();
+    btn1.style.display = "none";
+    btn2.style.display = "block";
+    nav.style.opacity = 1
+    nav.style.transition = "1s"
+    cal.addEventListener("click", ()=>{
+    box.style.display = "block"
+    nav.style.opacity = 0;
+    nav.style.transition = "none"
+    })
+   })
+   btn2.addEventListener("click", (e)=>{
+    e.preventDefault();
+    btn1.style.display = "block";
+    btn2.style.display = "none";
+    box.style.display = "none"
+    nav.style.opacity = 0;
+    nav.style.transition = "none"
+    // window.reload(own.style.animation = "none");
+   })
+    
+    function btnFn(num){
+            if(show.value == "Error" || show.value == "0" ){
+                show.value = "";
+                show.value += num;
+            } else {
+                show.value += num;
+            }
+        }
+
+        function btnFn(num){
+        show.value +=num;
+        if(num== "+" || num == "-" || num == "*" || num == "/" || num == "%"){
+         screen.value +=show.value;
+         show.value = "";
+        }
+        }
+
+        function clearFn(){
+            show.value = "";
+            screen.value = "";
+        }
+        function delFn(){
+            show.value = show.value.slice(0, -1);
+             screen.value = screen.value.slice(0 -1);
+        }
+        function equalFn(){
+            if(show.value == "Error"){
+                show.value +=num;
+            }
+
+            try {
+                    var x = screen.value + show.value;
+                    var ans = show.value = eval(x);
+                    screen.value=""
+                } catch (error) {
+                    show.value = "Error";
+                }
+             
+            }
+    
+
+
+  </script>
+</body>
+</html>
